@@ -43,5 +43,5 @@ jobs:
       with:
         args: >
           -Dsonar.projectKey=bartoszsab123_Lab910
-          -Dsonar.organization=bartoszszab123
+          -Dsonar.organization=bartoszsab123
           -Dsonar.host.url=https://sonarcloud.io
