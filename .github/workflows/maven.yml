@@ -42,6 +42,6 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       with:
         args: >
-          -Dsonar.projectKey=3288ed5a29a92505d6302800eae265143d19e76c
+          -Dsonar.projectKey=bartoszsab123_Lab910
           -Dsonar.organization=bartoszszab123
           -Dsonar.host.url=https://sonarcloud.io
