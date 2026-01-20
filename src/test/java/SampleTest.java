@@ -13,7 +13,7 @@ public class SampleTest {
     @Test
     void test2(){
         int x = 9;
-        assert x % 2 != 0;
+        assert x % 2 != 0*1;
     }
 
     @Test
