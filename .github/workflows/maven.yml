@@ -28,4 +28,7 @@ jobs:
       run: |
         mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
           -Dsonar.projectKey=3288ed5a29a92505d6302800eae265143d19e76c \
+          -Dsonar.organization=bartoszszab123 \
           -Dsonar.host.url=https://sonarcloud.io
+
+
