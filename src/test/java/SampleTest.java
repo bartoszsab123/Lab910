@@ -13,7 +13,7 @@ public class SampleTest {
     @Test
     void test2(){
         int x = 8;
-        assert x / 2 == 4;
+        assert x / 2 != 4;
     }
 
     @Test
