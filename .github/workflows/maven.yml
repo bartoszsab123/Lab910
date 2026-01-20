@@ -6,7 +6,11 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Java CI with Maven
+name: Java CI with Maven and SonarCloud
+
+permissions:
+  contents: read
+  pull-requests: read
 
 on:
   push:
@@ -16,23 +20,28 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
+
     - name: Set up JDK 17
       uses: actions/setup-java@v4
       with:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
-       
+      run: mvn -B verify
+
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN  }}
-
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      with:
+        args: >
+          -Dsonar.projectKey=3288ed5a29a92505d6302800eae265143d19e76c
+          -Dsonar.organization=bartoszszab123
+          -Dsonar.host.url=https://sonarcloud.io
